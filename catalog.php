@@ -50,14 +50,12 @@ if ($connection == false) {
 
                 <?php
                 $horse = mysqli_query($connection, "SELECT * FROM `horses`;");
-                $record = mysqli_fetch_assoc($horse);
-
-                /*Экспериментальная дичь */
+                $i = 1;
                 while (($record = mysqli_fetch_assoc($horse))) {
                     print_r("<li class=\"products-list__item\">");
                     print_r("<div class=\"product-image\">");
-                    print_r("<img class=\"image-mobile\" src=\"images/rubin.jpg\">");
-                    print_r("<img class=\"image-tablet\" src=\"images/rubin.jpg\">");
+                    print_r("<img class=\"image-mobile\" src=\"images/$i.jpg\">");
+                    print_r("<img class=\"image-tablet\" src=\"images/$i.jpg\">");
                     print_r("</div>");
 
                     print_r("<div class=\"product-stats\">");
@@ -67,151 +65,11 @@ if ($connection == false) {
                     print_r("<div class=\"volume-stat stat\">" . "<p>Рост</p>" . "<p>" . $record['Growth'] . " м</p>" . "</div>");
                     print_r("<div class=\"volume-stat stat\">" . "<p>Скорость</p>" . "<p>" . $record['Speed'] . " км/ч</p>" . "</div>");
                     print_r("<div class=\"volume-stat stat\">" . "<p>Возраст</p>" . "<p>" . $record['Age'] . " лет</p>" . "</div>");
+                    print_r("<a class=\"catalog-button button\" href=\"#form\">Заказать</a>");
+                    print_r("</li>");
+                    $i++;
                 };
-
-
-                print_r("<a class=\"catalog-button button\" href=\"#form\">Заказать</a>");
-                print_r("</li>");
                 ?>
-
-                <li class="products-list__item">
-                    <div class="product-image">
-                        <img class="image-mobile" src="images/vegas.jpg" alt="">
-                        <img class="image-tablet" src="images/vegas.jpg" alt="">
-                    </div>
-                    <?php
-                    $horse = mysqli_query($connection, "SELECT * FROM `horses` WHERE `ID horse` = 2;");
-                    $record = mysqli_fetch_assoc($horse);
-
-                    print_r("<div class=\"product-stats\">");
-                    print_r("<h3 class=\"product-title\">" . $record['Name'] . "</h3>");
-
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Вес</p>" . "<p>" . $record['Weight'] . " кг</p>" . "</div>");
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Рост</p>" . "<p>" . $record['Growth'] . " м</p>" . "</div>");
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Скорость</p>" . "<p>" . $record['Speed'] . " км/ч</p>" . "</div>");
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Возраст</p>" . "<p>" . $record['Age'] . " лет</p>" . "</div>");
-                    ?>
-                    <a class="catalog-button button" href="#form">Заказать</a>
-                </li>
-
-                <li class="products-list__item">
-                    <div class="product-image">
-                        <img class="image-mobile" src="images/mustang.jpg" alt="">
-                        <img class="image-tablet" src="images/mustang.jpg" alt="">
-                    </div>
-                    <?php
-                    $horse = mysqli_query($connection, "SELECT * FROM `horses` WHERE `ID horse` = 3;");
-                    $record = mysqli_fetch_assoc($horse);
-
-                    print_r("<div class=\"product-stats\">");
-                    print_r("<h3 class=\"product-title\">" . $record['Name'] . "</h3>");
-
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Вес</p>" . "<p>" . $record['Weight'] . " кг</p>" . "</div>");
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Рост</p>" . "<p>" . $record['Growth'] . " м</p>" . "</div>");
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Скорость</p>" . "<p>" . $record['Speed'] . " км/ч</p>" . "</div>");
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Возраст</p>" . "<p>" . $record['Age'] . " лет</p>" . "</div>");
-                    ?>
-                    <a class="catalog-button button" href="#form">Заказать</a>
-                </li>
-
-                <li class="products-list__item">
-                    <div class="product-image">
-                        <img class="image-mobile" src="images/valent.jpg" alt="">
-                        <img class="image-tablet" src="images/valent.jpg" alt="">
-                    </div>
-                    <?php
-                    $horse = mysqli_query($connection, "SELECT * FROM `horses` WHERE `ID horse` = 4;");
-                    $record = mysqli_fetch_assoc($horse);
-
-                    print_r("<div class=\"product-stats\">");
-                    print_r("<h3 class=\"product-title\">" . $record['Name'] . "</h3>");
-
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Вес</p>" . "<p>" . $record['Weight'] . " кг</p>" . "</div>");
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Рост</p>" . "<p>" . $record['Growth'] . " м</p>" . "</div>");
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Скорость</p>" . "<p>" . $record['Speed'] . " км/ч</p>" . "</div>");
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Возраст</p>" . "<p>" . $record['Age'] . " лет</p>" . "</div>");
-                    ?>
-                    <a class="catalog-button button" href="#form">Заказать</a>
-                </li>
-                <li class="products-list__item">
-                    <div class="product-image">
-                        <img class="image-mobile" src="images/volt.jpg" alt="">
-                        <img class="image-tablet" src="images/volt.jpg" alt="">
-                    </div>
-                    <?php
-                    $horse = mysqli_query($connection, "SELECT * FROM `horses` WHERE `ID horse` = 5;");
-                    $record = mysqli_fetch_assoc($horse);
-
-                    print_r("<div class=\"product-stats\">");
-                    print_r("<h3 class=\"product-title\">" . $record['Name'] . "</h3>");
-
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Вес</p>" . "<p>" . $record['Weight'] . " кг</p>" . "</div>");
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Рост</p>" . "<p>" . $record['Growth'] . " м</p>" . "</div>");
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Скорость</p>" . "<p>" . $record['Speed'] . " км/ч</p>" . "</div>");
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Возраст</p>" . "<p>" . $record['Age'] . " лет</p>" . "</div>");
-                    ?>
-                    <a class="catalog-button button" href="#form">Заказать</a>
-                </li>
-
-                <li class="products-list__item">
-                    <div class="product-image">
-                        <img class="image-mobile" src="images/ostwind.jpg" alt="">
-                        <img class="image-tablet" src="images/ostwind.jpg" alt="">
-                    </div>
-                    <?php
-                    $horse = mysqli_query($connection, "SELECT * FROM `horses` WHERE `ID horse` = 6;");
-                    $record = mysqli_fetch_assoc($horse);
-
-                    print_r("<div class=\"product-stats\">");
-                    print_r("<h3 class=\"product-title\">" . $record['Name'] . "</h3>");
-
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Вес</p>" . "<p>" . $record['Weight'] . " кг</p>" . "</div>");
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Рост</p>" . "<p>" . $record['Growth'] . " м</p>" . "</div>");
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Скорость</p>" . "<p>" . $record['Speed'] . " км/ч</p>" . "</div>");
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Возраст</p>" . "<p>" . $record['Age'] . " лет</p>" . "</div>");
-                    ?>
-                    <a class="catalog-button button" href="#form">Заказать</a>
-                </li>
-
-                <li class="products-list__item">
-                    <div class="product-image">
-                        <img class="image-mobile" src="images/grom.jpg" alt="">
-                        <img class="image-tablet" src="images/grom.jpg" alt="">
-                    </div>
-                    <?php
-                    $horse = mysqli_query($connection, "SELECT * FROM `horses` WHERE `ID horse` = 7;");
-                    $record = mysqli_fetch_assoc($horse);
-
-                    print_r("<div class=\"product-stats\">");
-                    print_r("<h3 class=\"product-title\">" . $record['Name'] . "</h3>");
-
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Вес</p>" . "<p>" . $record['Weight'] . " кг</p>" . "</div>");
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Рост</p>" . "<p>" . $record['Growth'] . " м</p>" . "</div>");
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Скорость</p>" . "<p>" . $record['Speed'] . " км/ч</p>" . "</div>");
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Возраст</p>" . "<p>" . $record['Age'] . " лет</p>" . "</div>");
-                    ?>
-                    <a class="catalog-button button" href="#form">Заказать</a>
-                </li>
-
-                <li class="products-list__item">
-                    <div class="product-image">
-                        <img class="image-mobile" src="images/sandy.jpg" alt="">
-                        <img class="image-tablet" src="images/sandy.jpg" alt="">
-                    </div>
-                    <?php
-                    $horse = mysqli_query($connection, "SELECT * FROM `horses` WHERE `ID horse` = 8;");
-                    $record = mysqli_fetch_assoc($horse);
-
-                    print_r("<div class=\"product-stats\">");
-                    print_r("<h3 class=\"product-title\">" . $record['Name'] . "</h3>");
-
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Вес</p>" . "<p>" . $record['Weight'] . " кг</p>" . "</div>");
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Рост</p>" . "<p>" . $record['Growth'] . " м</p>" . "</div>");
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Скорость</p>" . "<p>" . $record['Speed'] . " км/ч</p>" . "</div>");
-                    print_r("<div class=\"volume-stat stat\">" . "<p>Возраст</p>" . "<p>" . $record['Age'] . " лет</p>" . "</div>");
-                    ?>
-                    <a class="catalog-button button" href="#form">Заказать</a>
-                </li>
 
             </ul>
         </section>
