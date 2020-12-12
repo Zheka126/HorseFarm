@@ -45,7 +45,27 @@ if ($connection == false) {
     <main>
         <section class="main-products">
             <h1 class="main-products-title">Примеры лошадей с нашей фермы</h1>
-            <button class="addnewhorse">Создать новую карточку товара</button>
+            <button class="addnewhorsebtn">Создать новую карточку товара</button>
+            <div class="wrapForNewHorse">
+                <form class="form NewItem" action="PHP/NewHorse.php" method="POST">
+                    <label for="Name">Имя:</label>
+                    <input required id="Name" type="text" name="Name">
+
+                    <label for="Weight">Вес:</label>
+                    <input required id="Weight" type="text" name="Weight">
+
+                    <label for="Growth">Рост:</label>
+                    <input required id="Growth" type="text" name="Growth">
+
+                    <label for="Speed">Скорость:</label>
+                    <input required id="Speed" type="text" name="Speed">
+
+                    <label for="Age">Возраст:</label>
+                    <input required id="Age" type="text" name="Age">
+
+                    <button class="button form-button" type="submit">Создать</button>
+                </form>
+            </div>
             <ul class="products-list">
 
                 <?php
@@ -80,7 +100,7 @@ if ($connection == false) {
             <div class="wrapperForForms">
                 <div class="Races">
                     <button class="occupation-button button--Races">Скачки</button>
-                    <form class="form formRaces" action="PHP/racescript.php" method="post">
+                    <form class="form formRaces" action="PHP/racescript.php" method="POST">
                         <label for="ID horse">Выберите коня:</label>
                         <select required id="ID horse" name="ID horse">
                             <option value="1">1 - Рубин</option>
@@ -108,7 +128,7 @@ if ($connection == false) {
 
                 <div class="Education">
                     <button class="occupation-button button--education">Обучение</button>
-                    <form class="form formEducation" action="PHP/educationscript.php" method="post">
+                    <form class="form formEducation" action="PHP/educationscript.php" method="POST">
                         <label for="ID horse">Выберите коня:</label>
                         <select required id="ID horse" name="ID horse">
                             <option value="1">1 - Рубин</option>
@@ -136,7 +156,7 @@ if ($connection == false) {
 
                 <div class="Skrex">
                     <button class="occupation-button button--skrex">Скрещивание</button>
-                    <form class="form formSkrex" action="PHP/crossbreedingscript.php" method="post">
+                    <form class="form formSkrex" action="PHP/crossbreedingscript.php" method="POST">
                         <label for="ID horse">Выберите коня:</label>
                         <select required id="ID horse" name="ID horse">
                             <option value="1">1 - Рубин</option>
@@ -164,7 +184,7 @@ if ($connection == false) {
 
                 <div class="Farm">
                     <button class="occupation-button button--farm">Фермы</button>
-                    <form class="form formFarm" action="PHP/farmscript.php" method="post">
+                    <form class="form formFarm" action="PHP/farmscript.php" method="POST">
                         <label for="ID horse">Выберите коня:</label>
                         <select required id="ID horse" name="ID horse">
                             <option value="1">1 - Рубин</option>

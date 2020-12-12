@@ -13,6 +13,14 @@ button.onclick = function () {
     menu.classList.toggle('visually-hidden');
 };
 
+/*Скрипты для создания новой карточки товара*/
+var NewItembtn = document.querySelector(".addnewhorsebtn");
+var NewItem = document.querySelector(".NewItem");
+
+NewItembtn.onclick = function () {
+    NewItem.classList.toggle('switch');
+}
+
 /*Скрипты для открытия форм*/
 var btn1 = document.querySelector(".button--Races");
 var btn2 = document.querySelector(".button--education");
@@ -82,6 +90,5 @@ var tablebutton = document.querySelector(".showDataClents-button");
 var tabl = document.querySelector(".wrapperfortables");
 
 tablebutton.onclick = function () {
-    console.log(tabl)
     tabl.classList.toggle('switch2');
 };
