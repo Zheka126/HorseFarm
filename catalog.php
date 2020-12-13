@@ -72,8 +72,8 @@ if (!$connection) { //проверка подключения
                 $i = 1;
                 while (($record = mysqli_fetch_assoc($horse))) {
                     print_r("<li class=\"products-list__item\">");
-                    print_r("<button class=\"buttonChange\" value=\"$i\"><img src=\"images/change.png\"></button>");
-                    print_r("<button class=\"buttonClose\" value=\"$i\"><img src=\"images/krest.png\"></button>");
+                    print_r("<button class=\"buttonChange\" name=\"change\" value=\"$i\"><img src=\"images/change.png\"></button>");
+                    print_r("<button class=\"buttonClose\" name=\"delete\" value=\"$i\"><img src=\"images/krest.png\"></button>");
                     print_r("<div class=\"product-image\">");
                     print_r("<img class=\"image-mobile\" src=\"images/$i.jpg\">");
                     print_r("<img class=\"image-tablet\" src=\"images/$i.jpg\">");
@@ -91,33 +91,7 @@ if (!$connection) { //проверка подключения
                     $i++;
                 };
                 ?>
-                <script>
-                    /*Скрипты для удаления карточки товара*/
-                    var changebtns = document.querySelectorAll(".buttonChange");
-                    var closebtns = document.querySelectorAll(".buttonClose");
 
-                    for (let closebtn of closebtns) {
-                        closebtn.onclick = function() {
-                            var isboss = confirm("Вы точно хотите удалить?");
-                            if (isboss) {
-                                console.log("Карточка " + closebtn.value + " удалена");
-                                
-                                <?php
-
-                                $x = $i; //В эту переменную нужно записать value кнопки именно той карточки, которую пользователь хочет удалить
-
-                                $sql = "DELETE FROM `horses` WHERE `ID horse` = '$x'";
-
-                                if (mysqli_query($connection, $sql)) {
-                                    echo "<h2>Record was deleted successfully!</h2><br>";
-                                } else {
-                                    echo "Error: " . $sql . "<br>" . mysqli_error($connection);
-                                }
-                                ?>
-                            };
-                        };
-                    }
-                </script>
             </ul>
         </section>
 
