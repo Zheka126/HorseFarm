@@ -73,10 +73,13 @@ if (!$connection) { //проверка подключения
                 while (($record = mysqli_fetch_assoc($horse))) {
                     print_r("<li class=\"products-list__item\">");
                     print_r("<form action=\"PHP/DeleteHorse.php\" method=\"POST\">");
-                    print_r("<button class=\"buttonChange\" name=\"change\" value=\"$i\"><img src=\"images/change.png\"></button>");
-                    print_r("<button class=\"buttonClose\" name=\"delete\" value=\"$i\"><img src=\"images/krest.png\"></button>");
+                    print_r("<button class=\"buttonClose\" type=\"submit\" name=\"delete\" value=\"$i\"><img src=\"images/krest.png\"></button>");
                     print_r("</form>");
 
+                    print_r("<form action=\"PHP/ChangeHorse.php\" method=\"POST\">");
+                    print_r("<button class=\"buttonChange\" type=\"submit\" name=\"change\" value=\"$i\"><img src=\"images/change.png\"></button>");
+                    print_r("</form>");
+                
                     print_r("<div class=\"product-image\">");
                     print_r("<img class=\"image-mobile\" src=\"images/$i.jpg\">");
                     print_r("<img class=\"image-tablet\" src=\"images/$i.jpg\">");
