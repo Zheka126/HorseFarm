@@ -40,9 +40,9 @@ a {
 }
 
 .button {
-  margin: 0 20px;
+  margin: 20px;
   padding: 15px 20px;
-  background: #68b738;
+  background: #970101;
   color: #ffffff;
   text-align: center;
   text-transform: uppercase;
@@ -52,11 +52,11 @@ a {
 
 .button:hover,
 .button:focus {
-  background-color: #529c24;
+  background-color: #ce0000;
 }
 
 .button:active {
-  background-color: #7cd644;
+  opacity: 0.5;
 }
 
 .button-wrapper {
@@ -74,12 +74,12 @@ a {
   display: none;
 }
 
-.logo--tablet:focus,
-.logo--tablet:hover {
+.logo--tablet img:focus,
+.logo--tablet img:hover {
   opacity: 0.6;
 }
 
-.logo--tablet:active {
+.logo--tablet img:active {
   opacity: 0.4;
 }
 
@@ -216,6 +216,7 @@ a {
   font-family: "Oswald", sans-serif;
   font-weight: 400;
   text-align: center;
+  color: #ffffff;
 }
 
 .horse1__sentense {
@@ -237,14 +238,14 @@ a {
   position: absolute;
   top: 150px;
   width: 100%;
-  min-height: 270px;
+  height: 700px;
   margin-top: 40px;
   background: url("../images/horse1-mobile.png") no-repeat 50% 0;
 }
 
 .horse1__program {
-  margin-top: 340px;
-  margin-bottom: 30px;
+  margin-top: 360px;
+  margin-bottom: 50px;
   font-size: 17px;
   flex-grow: 1;
 }
@@ -256,45 +257,47 @@ a {
 
 .variants__title {
   position: absolute;
-  top: -69px;
-  margin: 30px 0;
+  top: -50px;
   padding: 0 20px;
 }
 
 .variants__list {
   list-style: none;
-  padding: 0 20px;
+  padding: 20px;
 }
 
 .variants__item {
   min-height: 400px;
   position: relative;
-  margin-top: 30px;
+  margin-top: 20px;
   padding: 20px;
   background-color: #790101;
   color: #ffffff;
   text-align: center;
   border-radius: 10px;
+  box-shadow: 0 0 20px 1px rgb(168, 164, 164);
 }
 
 .variants__item::after {
   content: "";
   position: absolute;
-  left: 20px;
-  bottom: 60px;
-  width: 240px;
-  height: 1px;
-  background-color: #d9d9d9;
+  left: 5px;
+  bottom: -30px;
+  width: 270px;
+  height: 3px;
+  background-color: #790101;
 }
 
 .variants__sentense {
   margin: 30px 0 45px;
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
 }
 
 .item__title {
   margin: 0;
   font-family: "Oswald", sans-serif;
-  font-size: 22px;
+  font-size: 23px;
   text-transform: uppercase;
 }
 
@@ -308,34 +311,54 @@ a {
 
 .stats {
   position: relative;
-  padding: 20px;
+  margin-top: 60px;
+  padding: 60px 20px 0;
   border-top: 3px solid #790101;
   border-bottom: 3px solid #790101;
 }
 
 .stats__title {
   position: absolute;
-  top: -138px;
-  margin: 30px 0;
+  top: -18px;
+  left: 0;
+  margin: 0;
   padding: 0 20px;
 }
 
 .stats__list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
   list-style: none;
   padding: 0;
 }
 
 .stats__item {
-  display: flex;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #ffc8c88f;
+  border: 3px solid #960000;
+  border-radius: 10px;
 }
 
 .stats__image {
-  width: 250px;
-  padding-right: 20px;
+  display: block;
+  height: 120px;
+  margin: 0 auto;
+}
+
+.stats__description {
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
 }
 
 .example__wrapper {
   padding: 0 20px;
+}
+
+.example__sentense {
+  font-family: "Oswald", sans-serif;
+  font-size: 19px;
 }
 
 .example__results {
@@ -352,10 +375,11 @@ a {
   content: "Вес";
   position: absolute;
   margin-top: -35px;
-  margin-left: -19px;
+  margin-left: 40px;
   padding: 0 10px;
   text-align: center;
-  font-size: 12px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 15px;
   background-color: #ffffff;
 }
 
@@ -363,10 +387,11 @@ a {
   content: "Возраст";
   position: absolute;
   margin-top: -35px;
-  margin-left: 7px;
+  margin-left: 40px;
   padding: 0 3px;
   text-align: center;
-  font-size: 12px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 15px;
   background-color: #ffffff;
 }
 
@@ -378,7 +403,7 @@ a {
   font-weight: bold;
   line-height: 24px;
   text-align: center;
-  border: 1px solid #cfcfcf;
+  border: 2px solid #790101;;
   border-radius: 3px;
   font-family: 'Oswald', sans-serif;
 }
@@ -395,6 +420,26 @@ a {
   display: none;
 }
 
+.example__wrapper__horse img {
+  width: 316px;
+  border: 2px solid #790101;
+  border-radius: 10px;
+}
+
+.example .example__toggle {
+  display: block;
+  margin-top: -7px;
+  padding: 15px;
+  padding-bottom: 20px;
+  border: 2px outset #790101;
+  border-radius: 5px;
+  box-shadow: 0 10px 38px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.22);
+  background-size: cover;
+  font-family: "Oswald", sans-serif;
+  font-size: 40px;
+  text-align: center;
+}
+
 .catimage1 {
   background: url("../images/before-mobile.png") no-repeat;
   background-position: 50% 0;
@@ -402,8 +447,14 @@ a {
   margin: 0;
 }
 
+.map__title {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  padding: 0 20px;
+}
+
 .map-container {
-  margin-top: 80px;
+  margin-top: 0;
   box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.2);
 }
 
@@ -415,17 +466,16 @@ a {
 }
 
 .address-container__cooperation {
+  min-width: 133px;
   text-transform: uppercase;
   font-family: 'Oswald', sans-serif;
   font-size: 14px;
   font-weight: 550;
 }
 
-.page-footer__logo {
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: 30px;
+.page-footer__logo img {
+  width: 318px;
+  margin-top: 20px;
 }
 
 .footer_developers {
@@ -471,8 +521,7 @@ a {
   }
 
   .horse1 {
-    padding-top: 60px;
-    background: none;
+    padding-bottom: 60px;
   }
 
   .horse1__title,
@@ -516,7 +565,6 @@ a {
   .horse1__image {
     position: relative;
     width: 100%;
-    height: 600px;
     top: 0;
     background-image: url("../images/horse1-tablet.jpg");
     margin-top: -60px;
@@ -548,6 +596,27 @@ a {
   .variants__sentense {
     font-family: 'Oswald', sans-serif;
     font-size: 21px;
+  }
+
+  .stats {
+    padding: 50px 20px;
+    margin-bottom: 100px;
+  }
+
+  .stats__title {
+    top: -40px;
+    margin: 0;
+  }
+
+  .stats__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 210px;
+    height: 300px;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
   }
 
   .example {
@@ -587,13 +656,13 @@ a {
   .example .example__weight::after {
     margin-top: -40px;
     margin-left: 60px;
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .example .example__days::after {
     margin-top: -40px;
     margin-left: 100px;
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .example .example__money {
@@ -607,36 +676,10 @@ a {
     display: block;
   }
 
-  .stats {
-    padding: 0 30px;
-    margin-bottom: 100px;
-  }
-
-  .stats__title {
-    margin: 50px 0;
-  }
-
-  .stats__list {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .stats__item {
-    margin-right: 20%;
-  }
-
-  .stats__item:nth-child(3) {
-    margin-top: 100px;
-  }
-
-  .stats__item:nth-child(4) {
-    margin-top: 100px;
-  }
-
-  .stats__item {
-    display: inline-block;
-    width: 208px;
-    font-size: 20px;
+  .example__wrapper__horse img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 5px;
   }
 
   .address-container {
@@ -712,6 +755,10 @@ a {
     padding: 80px 110px 200px;
   }
 
+  .variants__title {
+    top: -79px;
+  }
+
   .variants__list {
     display: flex;
     justify-content: space-between;
@@ -726,15 +773,26 @@ a {
   }
 
   .stats__title {
-    margin-top: 100px;
+    margin-top: 1px;
+    margin-left: 110px;
   }
 
   .stats__list {
     justify-content: space-between;
   }
 
-  .stats__list .stats__item {
-    margin: 0;
+  .stats__item {
+    width: 330px;
+    height: 450px;
+  }
+
+  .stats__item img {
+    width: 300px;
+    height: auto;
+  }
+
+  .stats__description {
+    font-size: 21px;
   }
 
   .example {
@@ -753,27 +811,6 @@ a {
     margin-bottom: 20px;
   }
 
-  .example .example__toggle {
-    display: block;
-    margin-top: -7px;
-    padding: 15px;
-    padding-bottom: 20px;
-    border: 2px outset #68b738;
-    border-radius: 5px;
-    box-shadow: 0 10px 38px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.22);
-    background-size: cover;
-    font-family: "Oswald", sans-serif;
-    font-size: 40px;
-    text-align: center;
-  }
-
-  .example__wrapper__cat img {
-    width: 500px;
-    border: 2px solid #68b738;
-    ;
-    border-radius: 10px;
-  }
-
   .example .resultsforsomeshit {
     display: block;
   }
@@ -785,6 +822,10 @@ a {
 
   .example .resultsforsomeshit .example__money br {
     display: none;
+  }
+
+  .example__wrapper__horse img {
+    width: 500px;
   }
 
   .map__title {
