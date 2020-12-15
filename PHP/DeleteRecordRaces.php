@@ -9,9 +9,9 @@ if (!$connection) {
 }
 ///////////////////
 
-$d = $_POST['ID_horse'];
+$d = $_POST['DeleteRecord'];
 
-$sql = "DELETE FROM `horses` WHERE `ID horse` = '$d'";
+$sql = "DELETE FROM `races` WHERE `ID customer` = '$d'";
 if (mysqli_query($connection, $sql)) {
     echo "<h2>Record was deleted successfully!</h2><br>";
 } else {

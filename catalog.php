@@ -291,7 +291,12 @@ if (!$connection) { //проверка подключения
                                 "<td>" . $record['ID customer'] . "</td>" .
                                 "<td>" . $record['Type of race'] . "</td>" .
                                 "<td>" . $record['Email'] . "</td>" .
-                                "<td>" . $record['Phone'] . "</td> </tr>");
+                                "<td>" . $record['Phone'] . "</td>");
+                            $dlt = $record['ID customer'];
+                            print_r("<td class=\"specdelet\"> <form class=\"\" action=\"PHP/DeleteRecordRaces.php\" method=\"POST\">");
+                            print_r("<button type=\"submit\" value=\"$dlt\" name=\"DeleteRecord\">Удалить</button>");
+                            print_r("</form>");
+                            print_r("</td> </tr>");
                         }
                         ?>
                     </table>
@@ -316,7 +321,12 @@ if (!$connection) { //проверка подключения
                                 "<td>" . $record['ID school'] . "</td>" .
                                 "<td>" . $record['Age group'] . "</td>" .
                                 "<td>" . $record['Email'] . "</td>" .
-                                "<td>" . $record['Phone'] . "</td> </tr>");
+                                "<td>" . $record['Phone'] . "</td> ");
+                            $dlt = $record['ID school'];
+                            print_r("<td class=\"specdelet\"> <form class=\"\" action=\"PHP/DeleteRecordEducation.php\" method=\"POST\">");
+                            print_r("<button type=\"submit\" value=\"$dlt\" name=\"DeleteRecord\">Удалить</button>");
+                            print_r("</form>");
+                            print_r("</td> </tr>");
                         }
                         ?>
                     </table>
@@ -341,7 +351,12 @@ if (!$connection) { //проверка подключения
                                 "<td>" . $record['ID customer'] . "</td>" .
                                 "<td>" . $record['Female breed'] . "</td>" .
                                 "<td>" . $record['Email'] . "</td>" .
-                                "<td>" . $record['Phone'] . "</td> </tr>");
+                                "<td>" . $record['Phone'] . "</td>");
+                            $dlt = $record['ID customer'];
+                            print_r("<td class=\"specdelet\"> <form class=\"\" action=\"PHP/DeleteRecordCross.php\" method=\"POST\">");
+                            print_r("<button type=\"submit\" value=\"$dlt\" name=\"DeleteRecord\">Удалить</button>");
+                            print_r("</form>");
+                            print_r("</td> </tr>");
                         }
                         ?>
                     </table>
@@ -366,7 +381,12 @@ if (!$connection) { //проверка подключения
                                 "<td>" . $record['ID farm'] . "</td>" .
                                 "<td>" . $record['Specialization'] . "</td>" .
                                 "<td>" . $record['Email'] . "</td>" .
-                                "<td>" . $record['Phone'] . "</td> </tr>");
+                                "<td>" . $record['Phone'] . "</td>");
+                            $dlt = $record['ID farm'];
+                            print_r("<td class=\"specdelet\"> <form class=\"\" action=\"PHP/DeleteRecordFarms.php\" method=\"POST\">");
+                            print_r("<button type=\"submit\" value=\"$dlt\" name=\"DeleteRecord\">Удалить</button>");
+                            print_r("</form>");
+                            print_r("</td> </tr>");
                         }
                         ?>
                     </table>

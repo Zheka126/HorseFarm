@@ -665,6 +665,27 @@ a {
   text-align: center;
 }
 
+table .specdelet {
+  border: none;
+}
+
+.table button {
+  padding: 5px 10px;
+  background-color: #ff4640;
+  border: 2px solid #b90600;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.table button:hover,
+.table button:focus {
+  background-color: #e9130c;
+}
+
+.table button:active {
+  opacity: 0.5;
+}
+
 .switch {
   display: block;
 }
