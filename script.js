@@ -19,7 +19,30 @@ var NewItem = document.querySelector(".NewItem");
 
 NewItembtn.onclick = function () {
     NewItem.classList.toggle('switch');
+    changeform.classList.remove('switch');
+    deleteform.classList.remove('switch');
 }
+
+/*Скрипты для изменения карточки товара*/
+var chageunlock = document.querySelector(".buttonChangeUnlock");
+var changeform = document.querySelector(".changeform");
+
+chageunlock.onclick = function () {
+    changeform.classList.toggle('switch');
+    NewItem.classList.remove('switch');
+    deleteform.classList.remove('switch');
+}
+
+/*Скрипты для удаления карточки товара*/
+var deletebtn = document.querySelector(".buttonClose");
+var deleteform = document.querySelector(".deleteform");
+
+deletebtn.onclick = function () {
+    deleteform.classList.toggle('switch');
+    NewItem.classList.remove('switch');
+    changeform.classList.remove('switch');
+}
+
 
 /*Скрипты для открытия форм*/
 var btn1 = document.querySelector(".button--Races");

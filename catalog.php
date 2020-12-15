@@ -44,42 +44,90 @@ if (!$connection) { //проверка подключения
     <main>
         <section class="main-products">
             <h1 class="main-products-title">Примеры лошадей с нашей фермы</h1>
-            <button class="addnewhorsebtn">Создать новую карточку товара</button>
-            <div class="wrapForNewHorse">
-                <form class="form NewItem" action="PHP/NewHorse.php" method="POST">
-                    <label for="Name">Имя:</label>
-                    <input required id="Name" type="text" name="Name">
+            <div class="wrapForCardRedak">
+                <div>
+                    <button class="addnewhorsebtn">Создать новую карточку товара</button>
+                    <form class="form NewItem" action="PHP/NewHorse.php" method="POST">
+                        <label for="Name">Имя:</label>
+                        <input required id="Name" type="text" name="Name">
 
-                    <label for="Weight">Вес:</label>
-                    <input required id="Weight" type="text" name="Weight">
+                        <label for="Weight">Вес:</label>
+                        <input required id="Weight" type="text" name="Weight">
 
-                    <label for="Growth">Рост:</label>
-                    <input required id="Growth" type="text" name="Growth">
+                        <label for="Growth">Рост:</label>
+                        <input required id="Growth" type="text" name="Growth">
 
-                    <label for="Speed">Скорость:</label>
-                    <input required id="Speed" type="text" name="Speed">
+                        <label for="Speed">Скорость:</label>
+                        <input required id="Speed" type="text" name="Speed">
 
-                    <label for="Age">Возраст:</label>
-                    <input required id="Age" type="text" name="Age">
+                        <label for="Age">Возраст:</label>
+                        <input required id="Age" type="text" name="Age">
 
-                    <button class="button form-button" type="submit">Создать</button>
-                </form>
+                        <button class="button form-button" type="submit">Создать</button>
+                    </form>
+                </div>
+
+                <div>
+                    <button class="buttonChangeUnlock"><img src="images/change.png">Изменить карточку товара</button>
+                    <form class="form changeform" action="PHP/ChangeHorse.php" method="POST">
+                        <label for="name">Имя:</label>
+                        <select id="name" name="ID horse">
+                            <?php
+                            $horse = mysqli_query($connection, "SELECT * FROM `horses`;");
+                            while (($record = mysqli_fetch_assoc($horse))) {
+                                $ID = $record['ID horse'];
+                                print_r("<option value=\"$ID\"> $ID - ");
+                                print_r($record['Name']);
+                                print_r("</option>");
+                            };
+                            ?>
+                        </select>
+                        <label for="Weightc">Вес:</label>
+                        <input required id="Weightc" type="text" name="Weight">
+
+                        <label for="Growthc">Рост:</label>
+                        <input required id="Growthc" type="text" name="Growth">
+
+                        <label for="Speedc">Скорость:</label>
+                        <input required id="Speedc" type="text" name="Speed">
+
+                        <label for="Agec">Возраст:</label>
+                        <input required id="Agec" type="text" name="Age">
+
+                        <button class="buttonChange" type="submit" name="change">Изменить</button>
+                    </form>
+                </div>
+
+                <div>
+                    <button class="buttonClose"><img src="images/krest.png">Удалить карточку товара</button>
+                    <form class="form deleteform" action="PHP/DeleteHorse.php" method="POST">
+
+                        <label for="name">Имя:</label>
+                        <select id="name" name="ID horse">
+                            <?php
+                            $horse = mysqli_query($connection, "SELECT * FROM `horses`;");
+                            while (($record = mysqli_fetch_assoc($horse))) {
+                                $ID = $record['ID horse'];
+                                print_r("<option value=\"$ID\"> $ID - ");
+                                print_r($record['Name']);
+                                print_r("</option>");
+                            };
+                            ?>
+                        </select>
+
+                        <button class="buttonDelete" type="submit">Удалить</button>
+                    </form>
+                </div>
             </div>
+
             <ul class="products-list">
 
-                <?php
+                <?php //Скрипты создания карточек товаров
                 $horse = mysqli_query($connection, "SELECT * FROM `horses`;");
                 $i = 1;
                 while (($record = mysqli_fetch_assoc($horse))) {
                     print_r("<li class=\"products-list__item\">");
-                    print_r("<form action=\"PHP/DeleteHorse.php\" method=\"POST\">");
-                    print_r("<button class=\"buttonClose\" type=\"submit\" name=\"delete\" value=\"$i\"><img src=\"images/krest.png\"></button>");
-                    print_r("</form>");
 
-                    print_r("<form action=\"PHP/ChangeHorse.php\" method=\"POST\">");
-                    print_r("<button class=\"buttonChange\" type=\"submit\" name=\"change\" value=\"$i\"><img src=\"images/change.png\"></button>");
-                    print_r("</form>");
-                
                     print_r("<div class=\"product-image\">");
                     print_r("<img class=\"image-mobile\" src=\"images/$i.jpg\">");
                     print_r("<img class=\"image-tablet\" src=\"images/$i.jpg\">");

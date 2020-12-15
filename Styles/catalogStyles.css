@@ -90,12 +90,12 @@ a {
   display: none;
 }
 
-.logo--tablet:focus,
-.logo--tablet:hover {
+.logo--tablet img:focus,
+.logo--tablet img:hover {
   opacity: 0.6;
 }
 
-.logo--tablet:active {
+.logo--tablet img:active {
   opacity: 0.4;
 }
 
@@ -223,7 +223,36 @@ a {
   line-height: 60px;
 }
 
-.addnewhorsebtn {
+.wrapForCardRedak {
+  display: flex;
+}
+
+.wrapForCardRedak div {
+  margin-right: 5%;
+}
+
+.buttonChangeUnlock {
+  width: 312px;
+  border: 2px solid #fcac17;
+  margin-left: 20px;
+}
+
+.buttonChangeUnlock:hover,
+.buttonChangeUnlock:focus {
+  background-color: rgba(255, 243, 73, 0.788);
+  box-shadow: 0 0 20px 1px rgb(159, 168, 153);
+}
+
+.buttonChangeUnlock img {
+  position: absolute;
+  top: 9px;
+  left: 10px;
+  width: 29px;
+}
+
+.addnewhorsebtn,
+.buttonChangeUnlock,
+.buttonClose {
   display: block;
   position: relative;
   min-width: 250px;
@@ -238,6 +267,11 @@ a {
   background-color: #e7e6e6;
   cursor: pointer;
   box-shadow: 0 0 20px 1px rgb(189, 202, 182);
+}
+
+.buttonChangeUnlock {
+  margin-left: 20px;
+  background-color: #fff5b9;
 }
 
 .addnewhorsebtn:hover,
@@ -257,6 +291,76 @@ a {
   background-size: 70%;
 }
 
+.changeform {
+  height: 536px;
+  padding: 20px;
+  border: 2px solid #ffc65c;
+  background-color: #ffe3af;
+}
+
+.changeform input {
+  width: 220px;
+  margin-bottom: 20px;
+  padding: 5px 10px;
+  font-family: 'Oswals', sans-serif;
+  font-size: 18px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.buttonChange, 
+.buttonDelete {
+  display: block;
+  width: 242px;
+  margin-top: 10px;
+  padding: 15px 20px;
+  background-color: #f8b436;
+  color: #f2f2f2;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 20px 1px rgb(189, 202, 182);
+}
+
+.buttonChange:hover,
+.buttonChange:focus {
+  background-color: #e6990b;
+  box-shadow: 0 0 20px 1px rgb(159, 168, 153);
+}
+
+.buttonDelete {
+  background-color: #ff2a23;
+}
+
+.buttonDelete:hover,
+.buttonDelete:focus {
+  background-color: #c40701;
+  box-shadow: 0 0 20px 1px rgb(159, 168, 153);
+}
+
+.buttonClose {
+  width: 312px;
+  margin-left: 20px;
+  border: 2px solid #d3221c;
+  background-color: #ffe1e0;
+}
+
+.buttonClose:hover,
+.buttonClose:focus {
+  background-color: rgba(255, 74, 74, 0.712);
+  box-shadow: 0 0 20px 1px rgb(159, 168, 153);
+}
+
+.buttonClose img {
+  position: absolute;
+  top: 8px;
+  left: 15px;
+  width: 33px;
+}
+
 .products-list {
   display: flex;
   justify-content: space-between;
@@ -266,7 +370,9 @@ a {
 }
 
 .products-list__item,
-.NewItem {
+.NewItem,
+.changeform,
+.deleteform {
   position: relative;
   margin-bottom: 50px;
   padding: 0 20px;
@@ -275,55 +381,18 @@ a {
   box-shadow: 0 0 20px 1px rgb(189, 202, 182);
 }
 
+.changeform, 
+.deleteform {
+  padding: 20px;
+}
+
+.deleteform {
+  background-color: #ffaeae;
+}
+
 .products-list__item:hover,
 .products-list__item:focus {
   box-shadow: 0 0 20px 1px rgb(156, 168, 149);
-}
-
-.buttonChange, 
-.buttonClose {
-  position: absolute;
-  top: 5px;
-  width: 28px;
-  height: 28px;
-  margin: 0;
-  padding: 0;
-  border-radius: 50%;
-  box-shadow: 0 0 7px rgba(0, 0, 0, .25);
-  cursor: pointer;
-}
-
-.buttonChange {
-  left: 5px;
-  background-color: #feffe0;
-  border: 2px solid #fcac17;
-}
-
-.buttonChange:hover,
-.buttonChange:focus {
-  box-shadow: inset 0 3px 20px rgba(255, 243, 74, 0.712);
-}
-
-.buttonChange img {
-  width: 17px;
-  margin-top: 2px;
-}
-
-.buttonClose {
-  right: 5px;
-  background-color: #ffe1e0;
-  border: 2px solid #d3221c;
-}
-
-.buttonClose:hover,
-.buttonClose:focus {
-  box-shadow: inset 0 3px 20px rgba(255, 74, 74, 0.712);
-}
-
-.buttonClose img {
-  width: 17px;
-  margin: 0;
-  margin-top: 2px;
 }
 
 .product-image {
@@ -796,8 +865,6 @@ a {
     padding: 10px 0;
     margin: 35px 0 0 0;
   }
-
-
 
   .additional-products {
     padding: 0 30px;
