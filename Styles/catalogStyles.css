@@ -251,8 +251,7 @@ a {
 }
 
 .addnewhorsebtn,
-.buttonChangeUnlock,
-.buttonClose {
+.buttonChangeUnlock{
   display: block;
   position: relative;
   min-width: 250px;
@@ -331,34 +330,29 @@ a {
   box-shadow: 0 0 20px 1px rgb(159, 168, 153);
 }
 
-.buttonDelete {
-  background-color: #ff2a23;
-}
-
-.buttonDelete:hover,
-.buttonDelete:focus {
-  background-color: #c40701;
-  box-shadow: 0 0 20px 1px rgb(159, 168, 153);
-}
-
 .buttonClose {
-  width: 312px;
-  margin-left: 20px;
+  position: absolute;
+  top: 5px;
+  right: 4px;
+  width: 33px;
+  height: 33px;
   border: 2px solid #d3221c;
-  background-color: #ffe1e0;
+  border-radius: 50%;
+  background-color: #ffaeae;
+  cursor: pointer;
 }
 
 .buttonClose:hover,
 .buttonClose:focus {
   background-color: rgba(255, 74, 74, 0.712);
-  box-shadow: 0 0 20px 1px rgb(159, 168, 153);
+  box-shadow: 0 0 20px 1px rgb(168, 153, 153);
 }
 
 .buttonClose img {
   position: absolute;
-  top: 8px;
-  left: 15px;
-  width: 33px;
+  top: 2px;
+  right: 2px;
+  width: 24px;
 }
 
 .products-list {
@@ -371,8 +365,7 @@ a {
 
 .products-list__item,
 .NewItem,
-.changeform,
-.deleteform {
+.changeform {
   position: relative;
   margin-bottom: 50px;
   padding: 0 20px;
@@ -381,13 +374,8 @@ a {
   box-shadow: 0 0 20px 1px rgb(189, 202, 182);
 }
 
-.changeform, 
-.deleteform {
+.changeform {
   padding: 20px;
-}
-
-.deleteform {
-  background-color: #ffaeae;
 }
 
 .products-list__item:hover,

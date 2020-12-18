@@ -9,7 +9,7 @@ if (!$connection) {
 }
 ///////////////////
 
-$d = $_POST['ID_horse'];
+$d = $_POST['delete'];
 
 $sql = "DELETE FROM `horses` WHERE `ID horse` = '$d'";
 if (mysqli_query($connection, $sql)) {

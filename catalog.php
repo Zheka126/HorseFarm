@@ -98,26 +98,6 @@ if (!$connection) { //проверка подключения
                     </form>
                 </div>
 
-                <div>
-                    <button class="buttonClose"><img src="images/krest.png">Удалить карточку товара</button>
-                    <form class="form deleteform" action="PHP/DeleteHorse.php" method="POST">
-
-                        <label for="name">Имя:</label>
-                        <select id="name" name="ID horse">
-                            <?php
-                            $horse = mysqli_query($connection, "SELECT * FROM `horses`;");
-                            while (($record = mysqli_fetch_assoc($horse))) {
-                                $ID = $record['ID horse'];
-                                print_r("<option value=\"$ID\"> $ID - ");
-                                print_r($record['Name']);
-                                print_r("</option>");
-                            };
-                            ?>
-                        </select>
-
-                        <button class="buttonDelete" type="submit">Удалить</button>
-                    </form>
-                </div>
             </div>
 
             <ul class="products-list">
@@ -126,11 +106,16 @@ if (!$connection) { //проверка подключения
                 $horse = mysqli_query($connection, "SELECT * FROM `horses`;");
                 $i = 1;
                 while (($record = mysqli_fetch_assoc($horse))) {
+                    $id = $record['ID horse'];
                     print_r("<li class=\"products-list__item\">");
 
+                    print_r("<form class=\"deleteform\" action=\"PHP/DeleteHorse.php\" method=\"POST\">");
+                    print_r("<button class=\"buttonClose\" type=\"submit\" name=\"delete\" value=\"$id\"><img src=\"images/krest.png\"></button>");
+                    print_r("</form>");
+
                     print_r("<div class=\"product-image\">");
-                    print_r("<img class=\"image-mobile\" src=\"images/$i.jpg\">");
-                    print_r("<img class=\"image-tablet\" src=\"images/$i.jpg\">");
+                    print_r("<img class=\"image-mobile\" src=\"images/$id.jpg\">");
+                    print_r("<img class=\"image-tablet\" src=\"images/$id.jpg\">");
                     print_r("</div>");
 
                     print_r("<div class=\"product-stats\">");
@@ -391,6 +376,7 @@ if (!$connection) { //проверка подключения
                         ?>
                     </table>
                 </div>
+            </div>
         </section>
 
         <section class="additional-products">
